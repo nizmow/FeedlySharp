@@ -5,10 +5,6 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedlySharp", "FeedlySharp\FeedlySharp.csproj", "{32152AF4-808D-4760-B3EF-001ED46FAA25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedlySharp.Tests", "FeedlySharp.Tests\FeedlySharp.Tests.csproj", "{89BFAE7F-EA8E-454A-B299-665926BC363F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedlySharp.Console", "FeedlySharp.Console\FeedlySharp.Console.csproj", "{DC056E22-14E3-4E5E-8E9D-E805D601F003}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
