@@ -102,7 +102,7 @@ namespace FeedlySharp
 
         Task RevokeRefreshToken(string refreshToken, CancellationToken cancellationToken = default(CancellationToken));
 
-        Task<Dictionary<string, string>> UpdatePreferences(IDictionary<string, string> preferences, CancellationToken cancellationToken = default(CancellationToken));
+        Task<IDictionary<string, string>> UpdatePreferences(IDictionary<string, string> preferences, CancellationToken cancellationToken = default(CancellationToken));
 
         Task<FeedlyUser> UpdateProfile(IDictionary<string, string> parameters, CancellationToken cancellationToken = default(CancellationToken));
 

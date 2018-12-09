@@ -17,7 +17,7 @@ namespace FeedlySharp
         /// <remarks>tags-endpoint (https://developer.feedly.com/v3/tags/#get-the-list-of-tags-created-by-the-user)</remarks>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public async Task<List<FeedlyTag>> GetTags(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IEnumerable<FeedlyTag>> GetTags(CancellationToken cancellationToken = default(CancellationToken))
         {
             return await Client.Request<List<FeedlyTag>>(HttpMethod.Get, "v3/tags", null, false, true, cancellationToken);
         }

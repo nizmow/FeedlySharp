@@ -32,7 +32,7 @@ namespace FeedlySharp
         /// <param name="ids">The ids of the feeds.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public async Task<List<FeedlyFeed>> GetFeeds(string[] ids, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IEnumerable<FeedlyFeed>> GetFeeds(string[] ids, CancellationToken cancellationToken = default(CancellationToken))
         {
             ids = ids.Select(id => id.StartsWith("feed/") ? id : "feed/" + id).ToArray();
             return await Client.Request<List<FeedlyFeed>>(HttpMethod.Post, "v3/feeds/.mget", ids, true, true, cancellationToken);

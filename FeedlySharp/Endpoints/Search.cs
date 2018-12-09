@@ -18,7 +18,7 @@ namespace FeedlySharp
         /// <param name="locale">Hint the search engine to return feeds in that locale (e.g. “pt”, “fr_FR”).</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public async Task<List<FeedlySearchFeed>> FindFeeds(string searchQuery, int? count = null, string locale = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IEnumerable<FeedlySearchFeed>> FindFeeds(string searchQuery, int? count = null, string locale = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             Dictionary<string, string> parameters = new Dictionary<string, string>();
             parameters["query"] = searchQuery;

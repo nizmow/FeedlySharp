@@ -32,7 +32,7 @@ namespace FeedlySharp
         /// <param name="ids">The ids of the entries.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public async Task<List<FeedlyEntry>> GetEntries(string[] ids, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IEnumerable<FeedlyEntry>> GetEntries(string[] ids, CancellationToken cancellationToken = default(CancellationToken))
         {
             return await Client.Request<List<FeedlyEntry>>(HttpMethod.Post, "v3/entries/.mget", ids, true, false, cancellationToken);
         }

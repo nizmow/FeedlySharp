@@ -19,7 +19,7 @@ namespace FeedlySharp
         /// <param name="categoryId">A user or system category can be passed to restrict the unread count response to feeds in this category.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public async Task<List<FeedlyCategoryUnreadCount>> GetMarkersUnreadCount(bool isAutoRefresh = false, DateTime? newerThan = null, string categoryId = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IEnumerable<FeedlyCategoryUnreadCount>> GetMarkersUnreadCount(bool isAutoRefresh = false, DateTime? newerThan = null, string categoryId = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             Dictionary<string, string> parameters = new Dictionary<string, string>();
             if (isAutoRefresh)

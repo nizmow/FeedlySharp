@@ -15,7 +15,7 @@ namespace FeedlySharp
         /// <remarks>preferences-endpoint (https://developer.feedly.com/v3/preferences/#get-the-preferences-of-the-user)</remarks>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A string dictionary, as the preferences list is dynamic and different for every application.</returns>
-        public async Task<Dictionary<string, string>> GetPreferences(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IDictionary<string, string>> GetPreferences(CancellationToken cancellationToken = default(CancellationToken))
         {
             return (await Client.Request<Dictionary<string, string>>(HttpMethod.Get, "v3/preferences", null, false, true, cancellationToken)) ?? new Dictionary<string, string>();
         }
@@ -28,7 +28,7 @@ namespace FeedlySharp
         /// <param name="preferences">The new or updated preferences. If you wish to delete a key, you can pass the special value "==DELETE==".</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A string dictionary, as the preferences list is dynamic and different for every application.</returns>
-        public async Task<Dictionary<string, string>> UpdatePreferences(Dictionary<string, string> preferences, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IDictionary<string, string>> UpdatePreferences(IDictionary<string, string> preferences, CancellationToken cancellationToken = default(CancellationToken))
         {
             return (await Client.Request<Dictionary<string, string>>(HttpMethod.Post, "v3/preferences", preferences, true, true, cancellationToken)) ?? new Dictionary<string, string>();
         }

@@ -26,7 +26,7 @@ namespace FeedlySharp
         /// <param name="parameters">The update profile parameters, see https://developer.feedly.com/v3/profile/#update-the-profile-of-the-user </param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public async Task<FeedlyUser> UpdateProfile(Dictionary<string, string> parameters, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<FeedlyUser> UpdateProfile(IDictionary<string, string> parameters, CancellationToken cancellationToken = default(CancellationToken))
         {
             return await Client.Request<FeedlyUser>(HttpMethod.Post, "v3/profile", parameters, true, true, cancellationToken);
         }

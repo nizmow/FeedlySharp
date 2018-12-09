@@ -15,7 +15,7 @@ namespace FeedlySharp
         /// <remarks>topics-endpoint (https://developer.feedly.com/v3/topics/#get-the-list-of-topics-the-user-has-added-to-their-feedly)</remarks>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public async Task<List<FeedlyTopic>> GetTopics(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IEnumerable<FeedlyTopic>> GetTopics(CancellationToken cancellationToken = default(CancellationToken))
         {
             return await Client.Request<List<FeedlyTopic>>(HttpMethod.Get, "v3/topics", null, false, true, cancellationToken);
         }

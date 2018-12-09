@@ -12,10 +12,10 @@ namespace FeedlySharp
         /// <summary>
         /// Returns all categories created by the user.
         /// </summary>
-        /// <remarks>categories-endpoint (https://developer.feedly.com/v3/categories/#get-the-list-of-all-categories)</remarks>
+        /// <remarks>categories-endpoint (https://developer.feedly.com/v3/categories/#get-the-IEnumerable-of-all-categories)</remarks>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public async Task<List<FeedlyCategory>> GetCategories(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IEnumerable<FeedlyCategory>> GetCategories(CancellationToken cancellationToken = default(CancellationToken))
         {
             return await Client.Request<List<FeedlyCategory>>(HttpMethod.Get, "v3/categories", null, false, true, cancellationToken);
         }

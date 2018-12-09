@@ -17,7 +17,7 @@ namespace FeedlySharp
         /// <remarks>subscriptions-endpoint (https://developer.feedly.com/v3/subscriptions/#get-the-users-subscriptions)</remarks>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public async Task<List<FeedlySubscription>> GetSubscriptions(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IEnumerable<FeedlySubscription>> GetSubscriptions(CancellationToken cancellationToken = default(CancellationToken))
         {
             return await Client.Request<List<FeedlySubscription>>(HttpMethod.Get, "v3/subscriptions", null, false, true, cancellationToken);
         }
@@ -31,7 +31,7 @@ namespace FeedlySharp
         /// <param name="optionalTitle">The optional title for the feed.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public async Task<bool> AddOrUpdateSubscription(string id, List<FeedlyCategory> categories = null, string optionalTitle = null, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<bool> AddOrUpdateSubscription(string id, IEnumerable<FeedlyCategory> categories = null, string optionalTitle = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             dynamic parameters = new { id = (id.StartsWith("feed/") ? id : "feed/" + id) };
 

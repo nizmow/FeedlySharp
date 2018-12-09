@@ -22,7 +22,7 @@ namespace FeedlySharp
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
         /// <exception cref="System.ArgumentException">It is not possible to use both newerThan and limitHours</exception>
-        public async Task<List<FeedlyEntry>> GetMixes(
+        public async Task<IEnumerable<FeedlyEntry>> GetMixes(
           string contentId,
           int? count = null,
           bool unreadOnly = false,
